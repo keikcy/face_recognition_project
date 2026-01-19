@@ -1,0 +1,1 @@
+web: python register_faces.py

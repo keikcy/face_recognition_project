@@ -1,0 +1,94 @@
+ body {
+            box-sizing: border-box;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Table row animation */
+        tbody tr {
+            transition: all 0.15s ease;
+        }
+
+        /* Status badge pulse animation */
+        .status-present::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Gradient border effect */
+        .card-gradient {
+            position: relative;
+        }
+        .card-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+            background-size: 200% 100%;
+            border-radius: 12px 12px 0 0;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* App background */
+        .app-bg {
+            background-color: #f1f5f9;
+        }
+
+        /* Background dot pattern */
+        .bg-pattern {
+            background-image: radial-gradient(
+                circle at 1px 1px,
+                #cbd5e1 1px,
+                transparent 0
+            );
+            background-size: 40px 40px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 0.75rem 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
+            z-index: 50;
+        }
+
